@@ -1,0 +1,5 @@
+# Ignorar la carpeta bot_sessions
+bot_sessions/
+
+# Ignorar la carpeta node_modules
+node_modules/
