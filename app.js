@@ -9,14 +9,36 @@ const main = async () => {
     const adapterProvider = createProvider(BaileysProvider);
 
     const flowGeneral = addKeyword(['menu', 'opciones', 'menu cid', 'cid', 'ver menu', 'ver menú', 'ver opciones'])
-    .addAnswer(['Bienvenido al bot 🤖 de *Centro Integral De Diseño*', 'A continuación te mostramos las opciones que tenemos', '- Tienes *problemas* y quieres generar un reporte? --> envía: *reporte*', '- Estás interesado en los cursos? --> envía *Cursos*'])
+        .addAnswer([
+            'Bienvenido al bot 🤖 de *Centro Integral De Diseño*',
+            '- Tienes *problemas* y quieres generar un reporte? --> envía: *reporte*',
+            '- Estás interesado en los cursos? --> envía *Cursos*',
+            '- Solicitar *factuta* 🧾 --> envía *factura*'
+        ]);
+
+    const flowFactura = addKeyword(['factura'])
+        .addAnswer(
+            'Hola 👋, te pediré unos datos para enviarte la factura!🧾'
+        )
+        .addAnswer(
+            ['¿Cuál es tu constancia de situación fiscal?', 'Puedes enviarla en una imágen o con mensaje'],
+            {
+                capture: true,
+            }
+        )
+        .addAnswer(
+            '¿A qué correo te gustaría que te enviaramos tu factura?🧾',
+            {
+                capture: true
+            }
+        )
+        .addAnswer(
+            'Gracias! Pronto te enviaremos tu factura.'
+        )
 
     const flowPrincipal = addKeyword(['reporte'])
         .addAnswer(
-            'Hola 👋, sentimos que estés teniendo problemas, pero intentaremos resolverlo.'
-        )
-        .addAnswer(
-            'A continuación haremos unas preguntas ❔ para recaudar información de tu problema y atenderlo de la mejor manera.🧐'
+            ['Hola 👋, sentimos que estés teniendo problemas, pero intentaremos resolverlo.', 'A continuación haremos unas preguntas ❔ para recaudar información de tu problema y atenderlo de la mejor manera.🧐']
         )
         .addAnswer(
             '¿De qué empresa te estás comunicando?🏭',
@@ -65,7 +87,7 @@ const main = async () => {
             }
         )
         .addAnswer(
-            '💻¿En qué software estás encontrando el problema el problema?','(windows, mac, linux, android, ios, no aplica)',
+            '💻¿En qué software estás encontrando el problema el problema? (windows, mac, linux, android, ios, no aplica)',
             {
                 capture: true,
             },
@@ -74,7 +96,7 @@ const main = async () => {
             }
         )
         .addAnswer(
-            '¿En qué tipo de dispositivo encontró el problema?📱','(Desktop, tablet, celular, no aplica)',
+            '¿En qué tipo de dispositivo encontró el problema?📱 (Desktop, tablet, celular, no aplica)',
             {
                 capture: true,
             },
@@ -83,7 +105,7 @@ const main = async () => {
             }
         )
         .addAnswer(
-            '¿Cuál prioridad describiría mejor el problema?🚦 ','(Baja, media, alta)',
+            '¿Cuál prioridad describiría mejor el problema?🚦 (Baja, media, alta)',
             {
                 capture: true,
             },
@@ -104,7 +126,7 @@ const main = async () => {
                     empresa: myState.empresa,
                     telefono: myState.telefono,
                     contacto: myState.contacto,
-                    correo: myState,correo,
+                    correo: myState.correo,
                     descripcion: myState.descripcion,
                     impacto: myState.impacto,
                     so: myState.so,
@@ -112,8 +134,8 @@ const main = async () => {
                     prioridad: myState.prioridad,
                     adicional: myState.adicional
                 };
-                console.log(report)
-                await state.update({ resp: ' Pronto nos comunicaremos contigo' });
+                console.log(report);
+                await state.update({ resp: 'Pronto nos comunicaremos contigo' });
                 /*
                 try {
                     const response = await axios.post('http://localhost:4321/api/reportwhatsapp', report);
@@ -129,12 +151,12 @@ const main = async () => {
             'Hemos recibido tu reporte!',
             null,
             async (ctx, { flowDynamic, state }) => {
-                const resp = state.get('resp')
-                await flowDynamic(`${resp}`)
+                const resp = state.get('resp');
+                await flowDynamic(`${resp}`);
             }
-        )
+        );
 
-    const adapterFlow = createFlow([flowPrincipal,flowGeneral]);
+    const adapterFlow = createFlow([flowGeneral, flowPrincipal, flowFactura]);
 
     createBot({
         flow: adapterFlow,

@@ -3,3 +3,6 @@ bot_sessions/
 
 # Ignorar la carpeta node_modules
 node_modules/
+
+# Ignorar los archivos .log en el directorio raíz
+/*.log
