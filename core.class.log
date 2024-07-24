@@ -1,0 +1,153 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213317852926@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB07B64B0AA86D4E48ABF',
+    participant: undefined
+  },
+  messageTimestamp: 1721772258,
+  pushName: 'Community',
+  broadcast: false,
+  message: Message {
+    conversation: 'cid',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'cid',
+  from: '5213317852926'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_70cd166a-3f09-4878-82f5-2bb4319666c7',
+  keyword: 'key_2d892e7e-2e0c-4589-a0d0-65866d2c2970',
+  answer: 'Bienvenido al bot 🤖 de *Centro Integral De Diseño*\n' +
+    'A continuación te mostramos las opciones que tenemos\n' +
+    '- Tienes *problemas* y quieres generar un reporte? --> envía: *reporte*\n' +
+    '- Estás interesado en los cursos? --> envía *Cursos*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'f40a63b4b3fa76a172cadf52e368c3fb'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213317852926@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0558CE901194CAD6D57',
+    participant: undefined
+  },
+  messageTimestamp: 1721772263,
+  pushName: 'Community',
+  broadcast: false,
+  message: Message {
+    conversation: 'reporte',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'reporte',
+  from: '5213317852926'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_f7ec4845-cea4-4672-b2bb-7fc04811844c',
+  keyword: 'key_4f8c94db-97db-443d-8651-eea64e25deab',
+  answer: 'Hola 👋, sentimos que estés teniendo problemas, pero intentaremos resolverlo.',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'f320e90e58344fb514da9d48cceed07d'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e753a98c-f0b0-4c21-9301-29032a7644ec',
+  keyword: 'ans_f7ec4845-cea4-4672-b2bb-7fc04811844c',
+  answer: 'A continuación haremos unas preguntas ❔ para recaudar información de tu problema y atenderlo de la mejor manera.🧐',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '101ed4839cea190debb85ca414d79fb8'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_74157391-0f6f-4fff-b45f-14a3de41c40b',
+  keyword: 'ans_e753a98c-f0b0-4c21-9301-29032a7644ec',
+  answer: '¿De qué empresa te estás comunicando?🏭',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd8eff480fc08220d1c438a2b0d189ef2'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '5213317852926@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB02F94C47C0843DE3FA9',
+    participant: undefined
+  },
+  messageTimestamp: 1721772266,
+  pushName: 'Community',
+  broadcast: false,
+  message: Message {
+    conversation: 'cid',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'cid',
+  from: '5213317852926'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_4ce69ec4-52e8-46dd-a044-6701201570e5',
+  keyword: 'ans_74157391-0f6f-4fff-b45f-14a3de41c40b',
+  answer: '👷‍♂️¿Cuál es su nombre?👷‍♀️',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '97b0469aa3c6b801278befe2c46d21e7'
+}
